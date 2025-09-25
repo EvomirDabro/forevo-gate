@@ -45,7 +45,7 @@
 
       // --- 2) TonConnect UI ---
       const tcui = new TON_CONNECT_UI.TonConnectUI({
-        manifestUrl: 'https://eloquent-panda-7f356a.netlify.app/webapp/tonconnect-manifest.json',
+        manifestUrl: 'https://forevo-gate.onrender.com/webapp/tonconnect-manifest.json',
         buttonRootId: 'tc',
         actionsConfiguration: {
           // постараемся вернуть в Telegram после подключения
@@ -76,10 +76,8 @@
           return;
         }
 
-        // ВНИМАНИЕ: если фронт на Netlify, а бэкенд на другом домене,
-        // здесь лучше указать полный URL до вашего API:
-        // const VERIFY_URL = 'https://<ВАШ_БЭКЕНД_ДОМЕН>/api/verify';
-        const VERIFY_URL = '/api/verify';
+        // Явный URL до API на Render
+        const VERIFY_URL = 'https://forevo-gate.onrender.com/api/verify';
 
         const r = await fetch(VERIFY_URL, {
           method: 'POST',
